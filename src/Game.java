@@ -16,7 +16,6 @@ public class Game {
 
   public void gameLoop() {
     do {
-      System.out.println(secretWord);
       System.out.println(maskedWord.getMaskedWord());
       System.out.println(GallowsRenderer.values()[errorsCount].getDrawing());
       Character letter = userInput();
