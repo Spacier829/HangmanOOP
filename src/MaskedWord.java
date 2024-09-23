@@ -11,6 +11,10 @@ public class MaskedWord {
     return maskedWord;
   }
 
+  public void setMaskedWord(String maskedWord) {
+    this.maskedWord = maskedWord;
+  }
+
   public void openLetter(Character letter) {
     int index = -1;
     do {

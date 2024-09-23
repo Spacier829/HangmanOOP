@@ -38,4 +38,8 @@ public class Dictionary {
     }
     return word;
   }
+
+  public boolean status() {
+    return WORDS_COUNT > 0;
+  }
 }
