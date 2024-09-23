@@ -1,4 +1,5 @@
 Реализация проекта "Виселица" роадмапа Сергея Жукова в ООП стиле на Java.
+Ссылка на источник: https://zhukovsd.github.io/java-backend-learning-course/projects/hangman/
 
 <h2>Описание игры:</h2>
 
