@@ -2,9 +2,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInput {
-  private MaskedWord maskedWord;
-  private String secretWord;
-  private List<Character> wrongLetters;
+  private final MaskedWord maskedWord;
+  private final String secretWord;
+  private final List<Character> wrongLetters;
 
   public UserInput(MaskedWord maskedWord, String secretWord, List<Character> wrongLetters) {
     this.maskedWord = maskedWord;
