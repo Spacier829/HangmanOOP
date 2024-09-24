@@ -7,10 +7,10 @@ public class Game {
   private final String secretWord;
   private MaskedWord maskedWord;
 
-  public Game(Dictionary dictionary) {
+  public Game() {
     this.errorsCount = 0;
     this.wrongInputLetters = new ArrayList<>();
-    this.secretWord = dictionary.getRandomWord();
+    this.secretWord = Dictionary.getRandomWord();
     this.maskedWord = new MaskedWord(secretWord);
   }
 

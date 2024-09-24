@@ -4,15 +4,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Dictionary {
-  private final String PATHNAME;
-  private final int WORDS_COUNT;
+  private static String PATHNAME;
+  private static int WORDS_COUNT;
 
-  public Dictionary(String pathName) {
-    this.PATHNAME = pathName;
-    this.WORDS_COUNT = setWordsCount();
+  public static void init(String pathName) {
+    PATHNAME = pathName;
+    WORDS_COUNT = setWordsCount();
   }
 
-  private int setWordsCount() {
+  private static int setWordsCount() {
     int count = 0;
     try (Scanner scanner = new Scanner(new File(PATHNAME))) {
       while (scanner.hasNextLine()) {
@@ -25,7 +25,7 @@ public class Dictionary {
     return count;
   }
 
-  public String getRandomWord() {
+  public static String getRandomWord() {
     String word = "";
     try (Scanner scanner = new Scanner(new File(PATHNAME))) {
       int wordID = new Random().nextInt(WORDS_COUNT);
@@ -39,7 +39,7 @@ public class Dictionary {
     return word;
   }
 
-  public boolean status() {
+  public static boolean status() {
     return WORDS_COUNT > 0;
   }
 }
