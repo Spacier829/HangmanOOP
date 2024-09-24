@@ -26,6 +26,7 @@ public class Menu {
           }
           case '2' -> {
             scanner.close();
+            return;
           }
           default -> System.out.println("Некорректный ввод, попробуйте еще раз");
         }
