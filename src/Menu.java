@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class Menu {
@@ -25,7 +26,7 @@ public class Menu {
       } else {
         switch (input.charAt(0)) {
           case START -> {
-            String pathName = "./Dictionary/dictionary.txt";
+            String pathName = "." + File.separator + "Dictionary" + File.separator + "dictionary.txt";
             Dictionary dictionary = new Dictionary(pathName);
             Game game = new Game(dictionary.getRandomWord());
             game.loop();
