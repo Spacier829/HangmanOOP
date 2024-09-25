@@ -1,43 +1,33 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class UserInput {
-  private final MaskedWord maskedWord;
-  private final String secretWord;
-  private final List<Character> wrongLetters;
 
-  public UserInput(MaskedWord maskedWord, String secretWord, List<Character> wrongLetters) {
-    this.maskedWord = maskedWord;
-    this.secretWord = secretWord;
-    this.wrongLetters = wrongLetters;
-  }
-
-  public Character letter() {
-    do {
-      Scanner scanner = new Scanner(System.in);
-      char[] letters = scanner.nextLine().toLowerCase().toCharArray();
-      if (letters.length == 0) {
-        System.out.println("Вы ничего не ввели, попробуйте еще раз.");
-        continue;
-      } else if (Character.isDigit(letters[0])) {
-        System.out.println("Вы ввели число, а не букву, попробуйте еще раз.");
-        continue;
-      } else if (!Character.isAlphabetic(letters[0])) {
-        System.out.println("Вы ввели не букву, попробуйте еще раз.");
+  public char letter() {
+    Scanner scanner = new Scanner(System.in);
+    while (true) {
+      char[] input = scanner.nextLine().toLowerCase().toCharArray();
+      if (!isLetter(input)) {
         continue;
       }
-      return letters[0];
-    } while (true);
+      return input[0];
+    }
   }
 
-  public boolean identify(Character letter) {
-    if (maskedWord.isLetterOpened(letter)) {
-      System.out.println("Эта буква уже открыта, попробуйте еще раз.");
-    } else if (wrongLetters.contains(letter)) {
-      System.out.println("Вы уже вводили эту букву, она неверна.");
-    } else if (secretWord.contains(letter.toString())) {
-      maskedWord.openLetter(letter);
-    } else {
+  public boolean isLetter(char[] input) {
+    if (input.length == 0) {
+      System.out.println("Вы ничего не ввели, попробуйте еще раз.");
+      return false;
+    }
+    if (input.length > 1) {
+      System.out.println("Вы ввели больше одной буквы, попробуйте еще раз");
+      return false;
+    }
+    if (Character.isDigit(input[0])) {
+      System.out.println("Вы ввели число, а не букву, попробуйте еще раз.");
+      return false;
+    }
+    if (!Character.isAlphabetic(input[0])) {
+      System.out.println("Вы ввели не букву, попробуйте еще раз.");
       return false;
     }
     return true;

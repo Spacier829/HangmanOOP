@@ -1,4 +1,4 @@
-public enum GallowsRenderer {
+public enum GallowsForm {
   ZERO("""
         ________
         |/     !
@@ -95,7 +95,7 @@ public enum GallowsRenderer {
     return drawing;
   }
 
-  GallowsRenderer(String drawing) {
+  GallowsForm(String drawing) {
     this.drawing = drawing;
   }
 }
