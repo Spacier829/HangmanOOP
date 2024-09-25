@@ -5,7 +5,7 @@ public class Menu {
   private final static char START = '1';
   private final static char EXIT = '2';
 
-  public static void show() {
+  public static void printInfo() {
     System.out.println("===========================================================");
     System.out.println("|                      Игра Виселица                      |");
     System.out.println("===========================================================");

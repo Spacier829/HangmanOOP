@@ -42,6 +42,7 @@ public class Game {
     } else if (maskedWord.equalsSecretWord()) {
       printWinMessage();
     }
+    System.out.println("Загаданное слово: " + maskedWord.getSECRET_WORD());
   }
 
   private void printGallows(int errorsCount) {
@@ -53,12 +54,10 @@ public class Game {
   private void printLoseMessage() {
     printGallows(errorsCount);
     System.out.println("К сожалению Вы проиграли.");
-    System.out.println("Загаданное слово: " + maskedWord.getSECRET_WORD());
   }
 
   private void printWinMessage() {
     System.out.println("Поздравляем! Вы выиграли!");
-    System.out.println("Загаданное слово: " + maskedWord.getSECRET_WORD());
   }
 
   private void printInputLetters() {
