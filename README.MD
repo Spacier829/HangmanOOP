@@ -20,6 +20,7 @@
 <h2>Запуск игры</h2>
 В директории проекта, выполните следующие команды в терминале:
 Скомпилируйте проект:
+
 <code>javac src/*.java -d classes</code>
 
 <code>jar -cvfm hangman.jar resources/META-INF/MANIFEST.MF -C classes . -C resources dictionary.txt</code>
