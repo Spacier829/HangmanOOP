@@ -26,8 +26,8 @@ public class Menu {
       } else {
         switch (input.charAt(0)) {
           case START -> {
-            String pathName = "." + File.separator + "Dictionary" + File.separator + "dictionary.txt";
-            Dictionary dictionary = new Dictionary(pathName);
+            String fileName = "dictionary.txt";
+            Dictionary dictionary = new Dictionary(fileName);
             Game game = new Game(dictionary.getRandomWord());
             game.loop();
           }
