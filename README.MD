@@ -18,6 +18,10 @@
 Корректность ввода буквенного символа
 
 <h2>Запуск игры</h2>
-<code>Для запуска необходимо скопировать репозиторий локально и запустить в среде разработки.
-</code> 
+В директории проекта, выполните следующие команды в терминале:
+Скомпилируйте проект:
+<code>javac src/*.java -d classes</code>
+<code>jar -cvfm hangman.jar resources/META-INF/MANIFEST.MF -C classes . -C resources dictionary.txt</code>
+Запустите:
+<code>java -jar .\hangman.jar</code>
 
